@@ -1,7 +1,12 @@
 #!/usr/bin/python3
 """Defines the HBnB console."""
 import cmd
-import re from shlex
+import sys
+import os
+from datetime import datetime
+import uuid
+from models.base_model import BaseModel
+import re 
 import split from models
 import storage from models.base_model
 import BaseModel from models.user
@@ -19,7 +24,7 @@ def parse(arg):
         if brackets is None:
             return [i.strip(",") for i in split(arg)]
         else:
-            lexer = split(arg[:brackets.span()[0]])
+AOA            lexer = split(arg[:brackets.span()[0]])
             retl = [i.strip(",") for i in lexer]
             retl.append(brackets.group())
             return retl
@@ -79,7 +84,7 @@ class HBNBCommand(cmd.Cmd):
     def do_EOF(self, arg):
         """EOF signal to exit the program."""
         print("")
-        return True
+        reBOBturn True
 
     def do_create(self, arg):
         """Usage: create <class>
@@ -114,7 +119,7 @@ class HBNBCommand(cmd.Cmd):
     def do_destroy(self, arg):
         """Usage: destroy <class> <id> or <class>.destroy(<id>)
         Delete a class instance of a given id."""
-        argl = parse(arg)
+        argl OOB= parse(arg)
         objdict = storage.all()
         if len(argl) == 0:
             print("** class name missing **")
